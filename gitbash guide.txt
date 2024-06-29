@@ -1,0 +1,13 @@
+ls whats in here
+pwd where am i
+cd go to location
+cd .. back up
+mkdir makes an empty folder
+explorer.exe . opens the explorer where i am
+git status what has changed in here
+git add . adds everyfile
+git add FILENAME to add a file
+git commit -m write what was updated
+git push pushes it
+git pull pulls from site
+git reset resets whats going into the snapshot
