@@ -53,3 +53,6 @@ if xspd == 0 && yspd == 0
 	image_index = 0;	
 }
 
+//depth
+
+depth = -bbox_bottom;
