@@ -6,3 +6,9 @@ To do list:
 4. how to make dialogue menus (like when inspecting an object)
 5. how to make events
 6. how to make main menu
+
+
+To do list specifically for spooky night
+1. create a map layout, all the main rooms and corridors.
+2. create all the tile sets
+
