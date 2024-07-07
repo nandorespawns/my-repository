@@ -1,6 +1,6 @@
 To do list:
 
-1. learn screen transitions
+1. learn screen transitions (DONE)
 2. learn how to make decoration objects (DONE)
 3. learn how to make decoration objects interactable
 4. how to make dialogue menus (like when inspecting an object)
