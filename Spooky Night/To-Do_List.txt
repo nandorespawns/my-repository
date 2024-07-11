@@ -5,7 +5,8 @@ To do list:
 3. learn how to make decoration objects interactable
 4. how to make dialogue menus (like when inspecting an object)
 5. how to make events
-6. how to make main menu
+6. how to make main menu (DONE)
+6.1 make options in different menu actually do something, the settings, window size, etc
 
 
 To do list specifically for spooky night
