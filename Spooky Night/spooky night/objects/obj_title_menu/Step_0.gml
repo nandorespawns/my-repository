@@ -1,6 +1,6 @@
 //get inputs
 
-
+if menu_movement = 1 {
 up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
 accept_key = keyboard_check_pressed(vk_space);
@@ -30,7 +30,9 @@ switch(menu_level)
 		{
 		//start game
 		case 0:	
-		
+		//menu_movement +=1 makes it so the entire if statement that encompases Step is wrong,
+		//stopping the player from being able to move while screen transition plays out
+		menu_movement += 1;
 		var inst = instance_create_depth(0, 0, -9999, obj_fade_out);
 		
 			
@@ -69,4 +71,6 @@ switch(menu_level)
 	
 	//correct option length
 	op_length = array_length(option[menu_level])
+}
+
 }

@@ -25,5 +25,4 @@ menu_level = 0;
 
 //ability to move around the menu
 
-
-
+menu_movement = 1;
