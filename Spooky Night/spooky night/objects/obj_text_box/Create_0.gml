@@ -18,13 +18,17 @@ txtb_img_spd = 1/30;
 
 page = 0;
 page_number = 0;
-text[0] = "this is a closet how exciting wow";
-text[1] = "dude this is a closet isnt this fucking amazing";
-text[2] = "short";
-text[3] = "the quick brown fox jumped over the laxy dog and shot him in his hind legs";
+text[0] = "";
+
 
 text_length[0] = string_length(text[0]);
 draw_char = 0;
 text_spd = 1;
+//options
+option[0] = "";
+option_link_id[0] = -1;
+option_pos = 0;
+option_number = 0;
+
 
 setup = false; 

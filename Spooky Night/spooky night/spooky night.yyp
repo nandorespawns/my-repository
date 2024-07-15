@@ -31,7 +31,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.6.0.157",
   },
   "name":"spooky night",
   "resources":[
@@ -50,7 +50,9 @@
     {"id":{"name":"rm_bed_room","path":"rooms/rm_bed_room/rm_bed_room.yy",},},
     {"id":{"name":"rm_living_room","path":"rooms/rm_living_room/rm_living_room.yy",},},
     {"id":{"name":"rm_title_screen","path":"rooms/rm_title_screen/rm_title_screen.yy",},},
+    {"id":{"name":"scr_game_text","path":"scripts/scr_game_text/scr_game_text.yy",},},
     {"id":{"name":"scr_macros","path":"scripts/scr_macros/scr_macros.yy",},},
+    {"id":{"name":"scr_text_box_functions","path":"scripts/scr_text_box_functions/scr_text_box_functions.yy",},},
     {"id":{"name":"spr_bed","path":"sprites/spr_bed/spr_bed.yy",},},
     {"id":{"name":"spr_closet","path":"sprites/spr_closet/spr_closet.yy",},},
     {"id":{"name":"spr_fade_in","path":"sprites/spr_fade_in/spr_fade_in.yy",},},

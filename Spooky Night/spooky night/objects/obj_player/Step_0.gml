@@ -4,6 +4,7 @@ up_key = keyboard_check(vk_up);
 down_key = keyboard_check(vk_down);
 
 
+
 //get xspd and yspd
 xspd = (right_key - left_key) * move_spd;
 yspd = (down_key - up_key) * move_spd;
@@ -66,4 +67,9 @@ if xspd == 0 && yspd == 0
 //depth
 
 depth = -bbox_bottom;
+
+
+//interact key
+
+
 

@@ -9,3 +9,7 @@ sprite[LEFT] = spr_player_left;
 sprite[DOWN] = spr_player_down;
 
 face = DOWN; 
+
+collision_check_w = 0;
+collision_check_h = 0;
+
