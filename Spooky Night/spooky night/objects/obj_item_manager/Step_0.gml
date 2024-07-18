@@ -16,3 +16,18 @@ var _yy = camera_get_view_y(view_camera[0]) + 16 + sep*i;
 	}
 
 }
+
+
+
+if selected_item != -1
+{
+	
+
+//use an item
+	if mouse_check_button_pressed(mb_left)
+	{
+	inv[selected_item].effect();	
+	}
+	
+	
+}

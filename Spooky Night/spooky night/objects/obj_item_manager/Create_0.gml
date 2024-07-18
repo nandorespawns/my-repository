@@ -3,13 +3,13 @@ depth = -9999;
 global.font = font_add_sprite(spr_main_font, 32, true, 1);
 
 //item constructor
-function create_item(_name, _desc, _spr) constructor
+function create_item(_name, _desc, _spr, _effect) constructor
 	{
 		
 	name = _name;
 	description = _desc;
 	sprite = _spr;
-	
+	effect = _effect;
 	
 	
 	}
@@ -25,14 +25,47 @@ global.item_list =
 	key : new create_item(
 	"Key", 
 	"opens gates",
-	spr_key
+	spr_key,
+	
+	function ()
+	{
+		
+		var _used = false;
+		
+		if instance_exists(obj_gate)
+		{
+			
+			with(obj_gate)
+			{
+			if distance_to_object(obj_player) < 20 
+				{
+				instance_destroy();
+				_used = true;
+				};	
+			}
+		
+		}
+		
+		
+		//get rid of the item
+		if _used == true
+		{
+		array_delete(inv, selected_item, 1);
+		}
+		
+	}
+	
+	
+	
 	),
 	
 	
 	goldkey : new create_item(
 	"Gold Key",
 	"opens gold gate",
-	spr_goldkey
+	spr_goldkey,
+	
+	
 	),
 	
 	

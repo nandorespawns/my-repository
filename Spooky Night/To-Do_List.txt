@@ -2,12 +2,13 @@ To do list:
 
 1. learn screen transitions (DONE)
 2. learn how to make decoration objects (DONE)
-3. learn how to make decoration objects interactable (50%)
+3. learn how to make decoration objects interactable (80%)[figure out how to get an obj directly into inv without placing it in overworld]
 4. how to make dialogue menus (like when inspecting an object(DONE)
 5. how to make events
 6. how to make main menu (DONE FOR REAL)
 6.1 make options in different menu actually do something, the settings, window size, etc
-7. how to store data (interact with object, get item, keep item,)
+7. how to store data (interact with object, get item, keep item,
+8. save data between rooms (DONE)
 
 
 To do list specifically for spooky night
