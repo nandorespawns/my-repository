@@ -9,6 +9,8 @@ To do list:
 6.1 make options in different menu actually do something, the settings, window size, etc
 7. how to store data (interact with object, get item, keep item,
 8. save data between rooms (DONE)
+9. how to save file and load file
+10. make enemy
 
 
 To do list specifically for spooky night

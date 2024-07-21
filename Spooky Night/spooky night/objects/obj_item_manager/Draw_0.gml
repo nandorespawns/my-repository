@@ -1,6 +1,21 @@
 draw_set_font(global.font);
+//makes it so the inventory wont open if player somehow goes back to main menu
+if room != rm_title_screen {
+	
 
 
+//trying to get menu to open up when pressing escape
+
+if global.menu_open {
+	
+	global.draw_inv = ! global.draw_inv;	
+	show_debug_message(global.draw_inv);
+}
+
+
+if global.draw_inv == true 
+{
+	
 
 for (var i = 0; i < array_length(inv); i++)
 {
@@ -26,5 +41,13 @@ draw_text_ext( _xx, _yy + _sep*array_length(inv), inv[i].description, 12, 80);
 
 //reset back to white
 draw_set_color(c_white);
+
+}
+
+
+
+
+
+}
 
 }

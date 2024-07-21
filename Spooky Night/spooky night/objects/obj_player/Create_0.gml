@@ -13,3 +13,7 @@ face = DOWN;
 collision_check_w = 0;
 collision_check_h = 0;
 
+able_to_move = true;
+able_to_menu = true;
+able_to_textbox = true;
+

@@ -1,9 +1,20 @@
+
+
+
+if able_to_move = true {
 right_key = keyboard_check(vk_right);
 left_key = keyboard_check(vk_left);
 up_key = keyboard_check(vk_up);
 down_key = keyboard_check(vk_down);
+}
 
+if able_to_menu = true {
+global.menu_open = keyboard_check_pressed(vk_escape);		
+}
 
+if able_to_textbox = true {
+	global.accept_key = keyboard_check_pressed(vk_space);
+} 
 
 //get xspd and yspd
 xspd = (right_key - left_key) * move_spd;
@@ -13,9 +24,30 @@ yspd = (down_key - up_key) * move_spd;
 
 if instance_exists(obj_pauser)
 	{
-		xspd = 0;
-		yspd = 0;
-	}
+	xspd = 0;
+	yspd = 0;
+	able_to_move = false;
+	able_to_menu = false;
+	} else {able_to_move = true; able_to_menu = true;}
+	
+if instance_exists(obj_text_box)
+	{
+	xspd = 0;
+	yspd = 0;
+	//this still allows the player to move a pixel after the pause
+		able_to_move = false;
+		able_to_menu = false;
+	} else {able_to_move = true; able_to_menu = true;}
+	
+	
+if global.draw_inv == true 
+{
+	xspd = 0;
+	yspd = 0;
+	//figure out how to not access a textbox while inv open
+	able_to_move = false;
+	able_to_textbox = false;
+} else {able_to_move = true; able_to_textbox = true;  }
 
 
 //set sprite

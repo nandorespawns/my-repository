@@ -90,4 +90,11 @@ selected_item = -1;
 //for drawing and mouse position
 sep = 16;
 
+//for making the menu appear and stay on screen
+global.draw_inv = false;
 
+//check state of keys
+global.key_state = array_create(1);
+white_key = false;
+gold_key = false;
+array_push(global.key_state, white_key, gold_key);

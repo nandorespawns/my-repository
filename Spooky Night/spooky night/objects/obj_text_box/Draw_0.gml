@@ -1,4 +1,6 @@
-accept_key = keyboard_check_pressed(vk_space);
+
+
+
 
 textbox_x = camera_get_view_x(view_camera[0]);
 textbox_y = camera_get_view_y(view_camera[0]) + 144;
@@ -35,9 +37,9 @@ if draw_char < text_length[page]
 	}
 	
 //flip through pages
-if accept_key 
+if global.accept_key 
 	{
-		instance_create_depth(0, 0, -9999, obj_pauser);
+		
 		//if the typing is done 
 		if draw_char == text_length[page]
 		{
@@ -56,7 +58,7 @@ if accept_key
 				}
 				
 				instance_destroy();
-				instance_destroy(obj_pauser);
+				
 			}
 			
 		}
@@ -66,7 +68,7 @@ if accept_key
 			draw_char = text_length[page];
 		}
 		
-	}
+	} 
 
 
 
