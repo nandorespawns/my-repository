@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"scr_text_box_functions",
+  "%Name":"scr_menuFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_text_box_functions",
+  "name":"scr_menuFunctions",
   "parent":{
-    "name":"Menu System",
-    "path":"folders/Menu System.yy",
+    "name":"Disgusting garbage",
+    "path":"folders/Disgusting garbage.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
