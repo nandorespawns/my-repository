@@ -3,27 +3,24 @@ function scr_game_text(_text_id){
 
 switch(_text_id){
 	
-	case "npc 0":
+	case "decor 0":
 		scr_text("");
-		scr_text("...");
-		scr_text("....");
-		scr_text("fok");
 			
 		break;
 		
 	
-	case "npc 1":
+	case "closet":
 	
 		scr_text("");
 		scr_text("hi im closet 1");
 		scr_text("more text haha more text haha");
 		scr_text("ligma bals??? ligma??");
-			scr_option("Yeah", "npc 1 - yes");
+			scr_option("Yeah", "closet - yes");
 			
-			scr_option("nah", "npc 1 - no");
+			scr_option("nah", "closet - no");
 		
 		break;
-			case "npc 1 - yes":
+			case "closet - yes":
 				scr_text("okay ligem up brah"); 
 				item_add(global.item_list.key);
 				global.key_state[0] = true;
@@ -32,13 +29,20 @@ switch(_text_id){
 			// think pre key state, post key state
 				break;
 				
-			case "npc 1 - no":
+			case "closet - no":
 				scr_text("mann what the hell mann what the hell");
 				break;
 				
-	case "npc 1 post key":
+	case "closet post key":
+		scr_text("");
 		scr_text("leave som ligma bal for the rest of us");
 		break;
+	
+	case "decor 1":
+		scr_text("");
+		scr_text("nothing interesting");
+		break;
+	
 	
 	
 	}

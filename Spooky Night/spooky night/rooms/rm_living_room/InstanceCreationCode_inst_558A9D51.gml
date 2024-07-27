@@ -1,2 +1,3 @@
+interactable = true;
 text_change = false;
-text_id = "npc 0";
+text_id = "decor 1";

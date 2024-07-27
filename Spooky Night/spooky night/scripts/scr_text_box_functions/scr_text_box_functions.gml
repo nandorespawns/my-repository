@@ -30,15 +30,6 @@ function create_textbox(_text_id) {
 	
 }
 
-/// @param text_id
-/// @param text_id2
-/// @param global.key_state[i]
-function change_id (_text_id, _text_id2, _key_state)
-{
-	if _key_state == true {
-		_text_id = _text_id2;
-	}
-		
-}
+
 
 
