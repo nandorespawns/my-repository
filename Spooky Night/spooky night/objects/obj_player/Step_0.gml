@@ -40,11 +40,10 @@ if instance_exists(obj_text_box)
 	} else {able_to_move = true; able_to_menu = true;}
 	
 	
-if global.draw_inv == true 
+if global.draw_pause_menu == true 
 {
 	xspd = 0;
 	yspd = 0;
-	//figure out how to not access a textbox while inv open
 	able_to_move = false;
 	able_to_textbox = false;
 } else {able_to_move = true; able_to_textbox = true;  }

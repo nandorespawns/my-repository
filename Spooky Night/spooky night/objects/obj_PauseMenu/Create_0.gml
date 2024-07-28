@@ -1,4 +1,4 @@
-
+depth = -9999;
 
 width = 64;
 height = 104;
@@ -15,11 +15,13 @@ option[0, 0] = "Items";
 option[0, 1] = "SFX"; 
 option[0, 2] = "Quit";
 
+
+
 //settings menu
-option[1, 0] = "Window Size";
-option[1, 1] = "Brightness";
+option[1, 0] = "Items";
+option[1, 1] = "SFX";
 option[1, 2] = "Controls";
-option[1, 3] = "Back";
+
 
 
 op_length = 0;
@@ -28,3 +30,5 @@ menu_level = 0;
 //ability to move around the menu
 
 menu_movement = 1;
+
+global.draw_pause_menu = false;

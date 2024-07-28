@@ -6,21 +6,17 @@ if room != rm_title_screen {
 
 //trying to get menu to open up when pressing escape
 
-if global.menu_open {
-	
-	global.draw_inv = ! global.draw_inv;	
-	show_debug_message(global.draw_inv);
-}
 
 
-if global.draw_inv == true 
+
+if global.draw_inv == true && global.draw_pause_menu == true
 {
 	
 
 for (var i = 0; i < array_length(inv); i++)
 {
 var _xx = camera_get_view_x(view_camera[0]) + 16;
-var _yy = camera_get_view_y(view_camera[0]) + 16;
+var _yy = camera_get_view_y(view_camera[0]) + 80;
 var _sep = sep;
 var _col = c_white;
 
@@ -45,9 +41,6 @@ draw_set_color(c_white);
 }
 
 
-
-
-
-}
+} else {global.draw_inv = false; obj_PauseMenu.menu_movement = 1;}
 
 }

@@ -1,4 +1,6 @@
 //get inputs
+if global.draw_pause_menu == true 
+{
 
 if menu_movement = 1 {
 left_key = keyboard_check_pressed(vk_left);
@@ -24,31 +26,21 @@ if accept_key
 switch(menu_level)
 	{
 		
-	//pause menu
+	//item menu
 	case 0:
 	switch(pos)
 		{
-		//start game
+		//open inv
 		case 0:	
-		//menu_movement +=1 makes it so the entire if statement that encompases Step is wrong,
-		//stopping the player from being able to move while screen transition plays out
-		menu_movement += 1;
-		var inst = instance_create_depth(0, 0, -9999, obj_fade_out);
-		
-			
-			if obj_fade_out.image_index < 1
-			{
-			
-			inst.target_rm = rm_bed_room;
-			
-			}
-			
-		break;
+				global.draw_inv = ! global.draw_inv;
+				show_debug_message(global.draw_inv);
+				if (global.draw_inv == true) {menu_movement = 0;}
+		break; 
 		//settings
 		case 1: menu_level = 1; break;
 		//quit game
 		case 2: game_end(); break;
-		}
+		} 
 	break;
 	
 	//settings menu
@@ -61,8 +53,7 @@ switch(menu_level)
 			case 1: break;
 			//controls
 			case 2: break;
-			//back
-			case 3: menu_level = 0; break;
+			
 		}
 	}
 	
@@ -73,4 +64,5 @@ switch(menu_level)
 	op_length = array_length(option[menu_level])
 }
 
+}
 }
