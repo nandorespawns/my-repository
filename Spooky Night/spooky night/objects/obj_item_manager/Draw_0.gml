@@ -8,7 +8,6 @@ if room != rm_title_screen {
 
 
 
-
 if global.draw_inv == true && global.draw_pause_menu == true
 {
 	
