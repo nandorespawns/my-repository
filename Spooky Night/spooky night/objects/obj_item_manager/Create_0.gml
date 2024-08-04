@@ -2,6 +2,20 @@ depth = -9999;
 
 global.font = font_add_sprite(spr_main_font, 32, true, 1);
 
+
+width = 256;
+height = 58;
+
+op_border = 8;
+op_border_top_side = 36;
+op_space_y = 16;
+op_space_x = 90;
+
+pos = 0; 
+selected_item = 0;
+
+
+
 //item constructor
 function create_item(_name, _desc, _spr, _effect) constructor
 	{
@@ -24,7 +38,7 @@ global.item_list =
 
 	key : new create_item(
 	"Key", 
-	"opens gates",
+	"skibidi L rizz W rizz gyatt holy moley holey mooly",
 	spr_key,
 	
 	function ()
@@ -98,3 +112,11 @@ global.key_state = array_create(1);
 white_key = false;
 gold_key = false;
 array_push(global.key_state, white_key, gold_key);
+
+//scrolling stuff
+scroll_offset = 0; //Index of the first item to display
+max_visible_items = 0;
+//animating the arrows
+image_index_up = 0;
+image_index_down = 0;
+

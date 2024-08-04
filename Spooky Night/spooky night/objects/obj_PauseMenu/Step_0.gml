@@ -37,24 +37,24 @@ switch(menu_level)
 				if (global.draw_inv == true) {menu_movement = 0;}
 		break; 
 		//settings
-		case 1: menu_level = 1; break;
+		case 1: break;
 		//quit game
 		case 2: game_end(); break;
 		} 
 	break;
 	
 	//settings menu
-	case 1:
-		switch(pos)
-		{
-			//window size
-			case 0: break;
-			//brightness
-			case 1: break;
-			//controls
-			case 2: break;
+	//case 1:
+	//	switch(pos)
+	//	{
+	//		//window size
+	//		case 0: break;
+	//		//brightness
+	//		case 1: break;
+	//		//controls
+	//		case 2: break;
 			
-		}
+	//	}
 	}
 	
 	//sets position back
