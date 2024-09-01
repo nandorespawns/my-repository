@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctuaa0qt8k0rv"]
+
+[ext_resource type="Script" path="res://arrow.gd" id="1_xwwd7"]
+[ext_resource type="Texture2D" uid="uid://behwxy3gij84u" path="res://Abilities/Arrow_attack.png" id="2_u7tsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlkec"]
+size = Vector2(10, 7)
+
+[node name="Arrow" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xwwd7")
+
+[node name="ArrowAttack_spr" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("2_u7tsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_vlkec")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

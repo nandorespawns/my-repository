@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=3 uid="uid://cv1c0td3unikm"]
+
+[ext_resource type="Texture2D" uid="uid://d3n37y3cy32y1" path="res://Player/player.png" id="1_fj5vi"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_uuqd1"]
+[ext_resource type="PackedScene" uid="uid://p2vqcfij2cad" path="res://Abilities/ability_manager.tscn" id="3_h5na4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we0qr"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_qks6f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_spr:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1fsyf"]
+resource_name = "moving"
+length = 0.41
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_spr:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10861, 0.206578, 0.304546),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_wn6gu"]
+resource_name = "still"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player_spr:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_603dg"]
+_data = {
+"RESET": SubResource("Animation_qks6f"),
+"moving": SubResource("Animation_1fsyf"),
+"still": SubResource("Animation_wn6gu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjw0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2sfca"]
+radius = 33.0151
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbev"]
+bg_color = Color(0.309804, 0.309804, 0.309804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2av8"]
+bg_color = Color(0.284227, 0.711421, 0.0918638, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqjhv"]
+bg_color = Color(0, 0.636262, 0.953505, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 17
+collision_mask = 17
+motion_mode = 1
+script = ExtResource("1_uuqd1")
+
+[node name="Player_spr" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_fj5vi")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_we0qr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_603dg")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_cjw0f")
+debug_color = Color(0.80216, 0.0477503, 0, 0.42)
+
+[node name="AbilityManager" parent="." instance=ExtResource("3_h5na4")]
+
+[node name="ExperienceManager" type="Area2D" parent="AbilityManager"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AbilityManager/ExperienceManager"]
+shape = SubResource("CircleShape2D_2sfca")
+debug_color = Color(0.121034, 0.643238, 0.20938, 0.42)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -149.0
+offset_top = 65.0
+offset_right = -61.0
+offset_bottom = 73.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1sbev")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l2av8")
+value = 100.0
+show_percentage = false
+
+[node name="ExperienceBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+offset_left = -149.0
+offset_top = 78.0
+offset_right = 151.0
+offset_bottom = 86.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1sbev")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cqjhv")
+max_value = 20.0
+show_percentage = false

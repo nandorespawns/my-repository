@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgvl2v1yguoip"]
+
+[ext_resource type="Script" path="res://World/world.gd" id="1_5en7q"]
+[ext_resource type="PackedScene" uid="uid://cv1c0td3unikm" path="res://Player/player.tscn" id="1_c5spt"]
+[ext_resource type="PackedScene" uid="uid://bw8lnwaa6hjd1" path="res://Mobs/mob_manager.tscn" id="2_on07f"]
+
+[sub_resource type="Curve2D" id="Curve2D_88ssx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -207, -119, 0, 0, 0, 0, 205, -118, 0, 0, 0, 0, 205, 117, 0, 0, 0, 0, -207, 115, 0, 0, 0, 0, -207, -119)
+}
+point_count = 5
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_5en7q")
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Arena"]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="Arena/CanvasLayer"]
+offset_left = -14.0
+offset_top = -18.0
+offset_right = 335.0
+offset_bottom = 192.0
+
+[node name="Player" parent="." instance=ExtResource("1_c5spt")]
+position = Vector2(160, 91)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+curve = SubResource("Curve2D_88ssx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-207, -119)
+rotation = 0.00242718
+
+[node name="MobManager" parent="." instance=ExtResource("2_on07f")]
+position = Vector2(-1, 1)
+
+[node name="Timer" type="Timer" parent="MobManager"]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="MobManager/Timer" to="MobManager" method="_on_timer_timeout"]

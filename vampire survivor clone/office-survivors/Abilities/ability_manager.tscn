@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://p2vqcfij2cad"]
+
+[ext_resource type="Script" path="res://Abilities/ability_manager.gd" id="1_4a11b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5fmp"]
+radius = 142.088
+
+[node name="AbilityManager" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4a11b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d5fmp")
+
+[node name="ShootingPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="ArrowTimer" type="Timer" parent="."]
+wait_time = 0.227
+autostart = true
+
+[connection signal="timeout" from="ArrowTimer" to="." method="_on_arrow_timer_timeout"]
