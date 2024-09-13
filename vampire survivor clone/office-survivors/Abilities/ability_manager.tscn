@@ -17,7 +17,11 @@ shape = SubResource("CircleShape2D_d5fmp")
 unique_name_in_owner = true
 
 [node name="ArrowTimer" type="Timer" parent="."]
-wait_time = 0.227
+autostart = true
+
+[node name="CrossTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="ArrowTimer" to="." method="_on_arrow_timer_timeout"]
+[connection signal="timeout" from="CrossTimer" to="." method="_on_cross_timer_timeout"]

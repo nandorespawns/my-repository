@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 
 signal health_depleted
+signal level_up(new_level)
 
 var health = 100.0
 var speed = 60.0
 var experience = 0.0
 var level = 1
-
+var EXPERIENCE_TO_LEVEL_UP = 20.0
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left","right","up","down")
@@ -28,8 +29,10 @@ func _physics_process(delta):
 			emit_signal("health_depleted")
 	
 	
+	
+	
 func experience_get():
-	const EXPERIENCE_RATE = 5.0
+	const EXPERIENCE_RATE = 10.0
 	var overlapping_experience = %ExperienceManager.get_overlapping_bodies()
 	if overlapping_experience.size() > 0:
 		experience += EXPERIENCE_RATE * overlapping_experience.size() 
@@ -38,13 +41,19 @@ func experience_get():
 	
 	
 func check_level_up():
-	const EXPERIENCE_TO_LEVEL_UP = 20.0
-	%ExperienceBar.max_value = EXPERIENCE_TO_LEVEL_UP
-	if experience == EXPERIENCE_TO_LEVEL_UP:
-		level += 1
-		experience -= EXPERIENCE_TO_LEVEL_UP 
-		
 	
+	%ExperienceBar.max_value = EXPERIENCE_TO_LEVEL_UP
+	if experience >= EXPERIENCE_TO_LEVEL_UP:
+		
+		level += 1
+		experience = 0
+		EXPERIENCE_TO_LEVEL_UP *= 1.5
+		emit_signal("level_up", level)
+		
+		
+		 
+		#exp bar needs to reset once hititing 20, right now it stays at 20 and then adds 5, so the bar restarts at 0
+		#i think this has to do with when is check_level_up being triggered, will fix later
 	
 
 	

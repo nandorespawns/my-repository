@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvley0em85bid"]
+
+[ext_resource type="Script" path="res://upgrade_selection_screen.gd" id="1_q3pne"]
+[ext_resource type="FontFile" uid="uid://qxmas6imknut" path="res://Font/PixelOperator.ttf" id="2_vs67f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwhkg"]
+bg_color = Color(0, 0.702092, 0.561653, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oggha"]
+font_size = 36
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Upgrade Selection Screen" type="Control"]
+process_mode = 2
+light_mask = 512
+visibility_layer = 512
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_left = -63.0
+offset_top = -76.0
+offset_right = -23.0
+offset_bottom = -36.0
+script = ExtResource("1_q3pne")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 134.0
+offset_bottom = 153.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwhkg")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 154.0
+offset_bottom = 31.0
+scale = Vector2(0.366536, 0.366536)
+text = "Choose an upgrade"
+label_settings = SubResource("LabelSettings_oggha")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 28.0
+offset_right = 131.0
+offset_bottom = 68.0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_vs67f")
+action_mode = 0
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 73.0
+offset_right = 116.0
+offset_bottom = 102.0
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 109.0
+offset_right = 116.0
+offset_bottom = 137.0
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

@@ -18,8 +18,8 @@ func _physics_process(delta):
 
 
 
-func take_damage():
-	health -= 1
+func take_damage(damage):
+	health -= damage
 	play_hurt_animation()
 	if health <= 0:
 		
