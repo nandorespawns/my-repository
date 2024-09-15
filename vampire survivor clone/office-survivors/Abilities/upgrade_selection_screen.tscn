@@ -25,6 +25,7 @@ offset_bottom = -36.0
 script = ExtResource("1_q3pne")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 134.0
 offset_bottom = 153.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iwhkg")

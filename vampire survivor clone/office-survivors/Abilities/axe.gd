@@ -1,7 +1,7 @@
 extends Area2D
 
 var travelled_distance = 0.0
-var speed = 200.0
+var speed = 120.0
 var forward_range = 130.0
 var backward_range = 300.0
 var pierce = 0
@@ -10,7 +10,7 @@ var current_phase = "forward"
 
 
 func _physics_process(delta):
-	
+	play_spin_animation()
 	
 	match current_phase:
 		"forward":

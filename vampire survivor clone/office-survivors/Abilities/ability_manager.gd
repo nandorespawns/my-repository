@@ -25,14 +25,14 @@ var arrow_range = 200.0
 var arrow_timer = 1
 var arrow_pierce = 0
 var arrow_damage = 1
-var arrow_num = 0
+var arrow_num = 1
 
 #initialize all cross stats
 var cross_speed = 50.0
 var cross_forward_range = 50.0
 var cross_backward_range = 200
 var cross_damage = 0.3
-var cross_num = 1
+var cross_num = 0
 var cross_timer = 2
 
 #initialize all axe stats
